@@ -40,7 +40,7 @@ DB_NAME=databaseName
 DB_USER=databaseUser
 DB_PASS=databasePass
 
-SECRET=secret_key_for_password_hash
+SECRET=secret_key_for_generate_jwt
 ```
 
 The `.env` file must be in the root path of the project.
