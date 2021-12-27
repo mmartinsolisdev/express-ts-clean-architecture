@@ -1,15 +1,19 @@
 import jwt from "jsonwebtoken";
 
-function generateToken() {
-  return jwt.sign({ user: "mike" }, process.env.SECRET as string, { expiresIn: '1h' });
+function generateToken(userID: string, role: string[]) {
+  return jwt.sign({ user: userID, role: role }, process.env.SECRET as string, { expiresIn: '1h' });
 }
 
 function verifyJwt(token: string) {
+  let result = {Decoded: {}, Error: undefined};
   try {
-    jwt.verify(token, process.env.SECRET as string);
+    let decoded = jwt.verify(token, process.env.SECRET as string);
+    result.Decoded = decoded;
   } catch (err) {
-    return err;
+    //console.log(result.Decoded);
+    result.Error = err;
   }
+    return result;
 }
 
 export default {
