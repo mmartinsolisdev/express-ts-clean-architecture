@@ -8,7 +8,7 @@ const addMember = (addMember: Function) => {
       if (member) {
         return { statusCode: 201, body: { member } }
       } else {
-        return { statusCode: 202, body: { msg: "User already exist." } }
+        return { statusCode: 202, body: { msg: "Member already exist." } }
       }
     } catch (e) {
       console.error(e)

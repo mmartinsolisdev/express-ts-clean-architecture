@@ -4,16 +4,14 @@ function generateToken(userID: string, role: string[]) {
   return jwt.sign({ user: userID, role: role }, process.env.SECRET as string, { expiresIn: '1h' });
 }
 
-function verifyJwt(token: string) {
-  let result = {Decoded: {}, Error: undefined};
+async function verifyJwt(token: string) {
   try {
-    let decoded = jwt.verify(token, process.env.SECRET as string);
-    result.Decoded = decoded;
+    let decoded = await jwt.verify(token, process.env.SECRET as string);
+    //console.log(decoded);
+    return decoded;
   } catch (err) {
-    //console.log(result.Decoded);
-    result.Error = err;
+    return err;
   }
-    return result;
 }
 
 export default {

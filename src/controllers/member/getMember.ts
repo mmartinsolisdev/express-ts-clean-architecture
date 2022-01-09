@@ -7,7 +7,7 @@ const getMember = (getMember: Function) => {
         if (member) {
           return { statusCode: 200, body: { member }};
         } else {
-          return { statusCode: 404, body: { msg: "User not found."}};
+          return { statusCode: 404, body: { msg: "Member not found."}};
         }
     } catch (e) {
       console.error("Bad request =>", e)

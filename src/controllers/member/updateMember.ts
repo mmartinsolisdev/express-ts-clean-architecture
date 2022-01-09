@@ -9,7 +9,7 @@ const updateMember = (updateMember: Function) => {
       if (member) {
         return { statusCode: 201, body: { member }}
       } else {
-        return { statusCode: 404, body: { msg: "User does not exist."}}
+        return { statusCode: 404, body: { msg: "Member does not exist."}}
       }
     } catch (e) {
       console.error(e)

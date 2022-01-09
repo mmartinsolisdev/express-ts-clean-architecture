@@ -11,7 +11,7 @@ const getMember = (getMembers: Function) => {
       console.error(e)
       return {
         statusCode: 400,
-        body: { error: 'Users not found' }
+        body: { error: 'Members not found' }
       };
     };
   };
